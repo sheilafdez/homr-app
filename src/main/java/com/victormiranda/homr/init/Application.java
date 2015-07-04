@@ -16,7 +16,6 @@ public class Application  implements WebApplicationInitializer {
 
     private static final String DISPATCHER_SERVLET_NAME = "dispatcher";
 
-
     public void onStartup(ServletContext servletContext) throws ServletException {
         AnnotationConfigWebApplicationContext ctx = new AnnotationConfigWebApplicationContext();
         servletContext.addListener(new ContextLoaderListener(ctx));
