@@ -1,6 +1,6 @@
 package com.javaloping.homr.service;
 
-import com.javaloping.homr.dto.UserDTO;
+import com.javaloping.homr.dto.user.UserDTO;
 
 /**
  * Created by sheila on 05/07/15.

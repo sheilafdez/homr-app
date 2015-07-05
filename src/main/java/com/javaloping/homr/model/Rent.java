@@ -19,14 +19,10 @@ public class Rent extends Property {
     @Enumerated(EnumType.STRING)
     private RentPriceType priceType;
 
-    private Boolean pets;
-
-    private Boolean dishwasher;
-
-    private boolean furnished;
-
     @Column( precision = 10, scale = 2, columnDefinition="DECIMAL(10,2)")
     private BigDecimal deposit;
+
+    private RentFeatures rentFeatures;
 
     public RentPeriodType getRentPeriod() {
         return rentPeriod;
@@ -42,30 +38,6 @@ public class Rent extends Property {
 
     public void setPriceType(RentPriceType priceType) {
         this.priceType = priceType;
-    }
-
-    public Boolean isPets() {
-        return pets;
-    }
-
-    public void setPets(Boolean pets) {
-        this.pets = pets;
-    }
-
-    public Boolean isDishwasher() {
-        return dishwasher;
-    }
-
-    public void setDishwasher(Boolean dishwasher) {
-        this.dishwasher = dishwasher;
-    }
-
-    public boolean isFurnished() {
-        return furnished;
-    }
-
-    public void setFurnished(boolean furnished) {
-        this.furnished = furnished;
     }
 
     public BigDecimal getDeposit() {

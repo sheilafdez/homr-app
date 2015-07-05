@@ -1,6 +1,6 @@
 package com.javaloping.homr.controller;
 
-import com.javaloping.homr.dto.UserDTO;
+import com.javaloping.homr.dto.user.UserDTO;
 import com.javaloping.homr.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
