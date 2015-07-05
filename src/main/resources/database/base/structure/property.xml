@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+     http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet author="victor" id="favorite-property-1">
+
+        <createTable tableName="properties">
+
+            <column autoIncrement="true" name="id" type="INT(10)">
+                <constraints primaryKey="true"/>
+            </column>
+
+
+            <column name="mode" type="Varchar(10)"/>
+
+            <column name="name" type="Varchar(75)"/>
+
+            <column name="description" type="Varchar(255)"/>
+
+            <column name="ownerId" type="Integer(10)"/>
+            <column name="addressId" type="Integer(10)"/>
+            <column name="views" type="Integer(10)"/>
+            <column name="price" type="Decimal(10,2)"/>
+
+            <!-- Rent columns -->
+            <column name="deposit" type="Decimal(10,2)"/>
+            <column name="pets" type="bit"/>
+            <column name="furnished" type="bit"/>
+            <column name="dishwasher" type="bit"/>
+            <column name="priceType" type="Varchar(20)"/>
+            <column name="rentPeriod" type="Varchar(20)"/>
+
+
+            <column name="bedrooms" type="Integer(1)"/>
+            <column name="lift" type="bit"/>
+            <column name="floor" type="Integer(1)"/>
+            <column name="sqMeters" type="Float(4)"/>
+
+            <column name="eldery" type="Varchar(75)"/>
+            <column name="propertyType" type="Varchar(75)"/>
+
+            <column name="createDate" type="DATE"/>
+            <column name="modifyDate" type="DATE"/>
+
+        </createTable>
+
+    </changeSet>
+
+</databaseChangeLog>

@@ -1,6 +1,7 @@
 package com.javaloping.homr.model;
 
 import javax.persistence.*;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -21,6 +22,12 @@ public class User {
 
     @OneToMany(mappedBy = "user")
     private List<Favorite> favoriteList;
+
+    @Temporal(TemporalType.DATE)
+    private Date createDate;
+
+    @Temporal(TemporalType.DATE)
+    private Date modifyDate;
 
     /** CONSTRUCTORS **/
 
@@ -72,5 +79,21 @@ public class User {
 
     public void setFavoriteList(List<Favorite> favoriteList) {
         this.favoriteList = favoriteList;
+    }
+
+    public Date getCreateDate() {
+        return createDate;
+    }
+
+    public void setCreateDate(Date createDate) {
+        this.createDate = createDate;
+    }
+
+    public Date getModifyDate() {
+        return modifyDate;
+    }
+
+    public void setModifyDate(Date modifyDate) {
+        this.modifyDate = modifyDate;
     }
 }

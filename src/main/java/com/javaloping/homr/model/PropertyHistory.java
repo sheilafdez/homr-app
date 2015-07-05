@@ -1,12 +1,13 @@
 package com.javaloping.homr.model;
 
 import javax.persistence.*;
+import java.util.Date;
 
 /**
  * Created by victor on 04/07/15.
  */
 @Entity
-@Table(name = "propertyhistories")
+@Table(name = "property_histories")
 public class PropertyHistory {
 
     @Id
@@ -17,4 +18,51 @@ public class PropertyHistory {
     @JoinColumn(name = "propertyId")
     private Property property;
 
+    private String description;
+
+    @Temporal(TemporalType.DATE)
+    private Date createDate;
+
+    @Temporal(TemporalType.DATE)
+    private Date modifyDate;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Property getProperty() {
+        return property;
+    }
+
+    public void setProperty(Property property) {
+        this.property = property;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Date getCreateDate() {
+        return createDate;
+    }
+
+    public void setCreateDate(Date createDate) {
+        this.createDate = createDate;
+    }
+
+    public Date getModifyDate() {
+        return modifyDate;
+    }
+
+    public void setModifyDate(Date modifyDate) {
+        this.modifyDate = modifyDate;
+    }
 }

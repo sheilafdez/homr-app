@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+     http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet author="victor" id="property-history-structure-1">
+
+        <createTable tableName="property_histories">
+
+            <column autoIncrement="true" name="id" type="INT(10)">
+                <constraints primaryKey="true"/>
+            </column>
+
+            <column name="propertyId" type="INT(10)"/>
+            <column name="description" type="Varchar(255)"/>
+
+            <column name="createDate" type="DATE"/>
+            <column name="modifyDate" type="DATE"/>
+
+
+        </createTable>
+
+    </changeSet>
+
+</databaseChangeLog>
