@@ -49,7 +49,7 @@ public abstract class Property {
     @JoinColumn(name = "ownerId")
     private User owner;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "addressId")
     private Address address;
 

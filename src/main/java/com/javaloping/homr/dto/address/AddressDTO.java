@@ -6,7 +6,7 @@ package com.javaloping.homr.dto.address;
 public class AddressDTO {
     private Long id;
     private String street;
-    private String number;
+    private Integer number;
     private AreaDTO area;
 
     public Long getId() {
@@ -25,11 +25,11 @@ public class AddressDTO {
         this.street = street;
     }
 
-    public String getNumber() {
+    public Integer getNumber() {
         return number;
     }
 
-    public void setNumber(String number) {
+    public void setNumber(Integer number) {
         this.number = number;
     }
 

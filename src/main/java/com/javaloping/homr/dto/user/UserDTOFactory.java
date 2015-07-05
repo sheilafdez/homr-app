@@ -8,7 +8,11 @@ import com.javaloping.homr.model.User;
 public class UserDTOFactory {
 
     public static UserDTO create(final User model) {
-        UserDTO user = new UserDTO();
+        final UserDTO user = new UserDTO();
+
+        user.setId(model.getId());
+        user.setName(model.getPhoneNumber());
+        user.setUsername(model.getUsername());
 
         return user;
     }

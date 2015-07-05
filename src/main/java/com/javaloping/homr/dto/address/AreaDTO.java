@@ -7,7 +7,7 @@ public class AreaDTO {
     private Long id;
     private String name;
     private CountryDTO countryDTO;
-    private BasicAreaDTO parent;
+    private AreaDTO parent;
 
     public Long getId() {
         return id;
@@ -33,11 +33,11 @@ public class AreaDTO {
         this.countryDTO = countryDTO;
     }
 
-    public BasicAreaDTO getParent() {
+    public AreaDTO getParent() {
         return parent;
     }
 
-    public void setParent(BasicAreaDTO parent) {
+    public void setParent(AreaDTO parent) {
         this.parent = parent;
     }
 }

@@ -18,6 +18,11 @@ public abstract class PropertyDTO extends BasicPropertyDTO {
 
     private UserDTO owner;
 
+    private Float sqMeters;
+    private int bedrooms;
+    private int bathrooms;
+    private Integer floor;
+
     public String getDescription() {
         return description;
     }
@@ -48,5 +53,37 @@ public abstract class PropertyDTO extends BasicPropertyDTO {
 
     public void setOwner(UserDTO owner) {
         this.owner = owner;
+    }
+
+    public Float getSqMeters() {
+        return sqMeters;
+    }
+
+    public void setSqMeters(Float sqMeters) {
+        this.sqMeters = sqMeters;
+    }
+
+    public void setBedrooms(int bedrooms) {
+        this.bedrooms = bedrooms;
+    }
+
+    public int getBedrooms() {
+        return bedrooms;
+    }
+
+    public void setBathrooms(int bathrooms) {
+        this.bathrooms = bathrooms;
+    }
+
+    public int getBathrooms() {
+        return bathrooms;
+    }
+
+    public void setFloor(Integer floor) {
+        this.floor = floor;
+    }
+
+    public Integer getFloor() {
+        return floor;
     }
 }

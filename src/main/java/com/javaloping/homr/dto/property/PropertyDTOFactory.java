@@ -1,5 +1,7 @@
 package com.javaloping.homr.dto.property;
 
+import com.javaloping.homr.dto.address.AddressDTO;
+import com.javaloping.homr.dto.address.AddressDTOFactory;
 import com.javaloping.homr.dto.user.UserDTO;
 import com.javaloping.homr.dto.user.UserDTOFactory;
 import com.javaloping.homr.model.Property;
@@ -22,10 +24,20 @@ public class PropertyDTOFactory {
         property.setId(model.getId());
         property.setName(model.getName());
         property.setDescription(model.getDescription());
+        property.setSqMeters(model.getFeatures().getSqMeters());
+        property.setBathrooms(model.getFeatures().getBathrooms());
+        property.setBedrooms(model.getFeatures().getBathrooms());
+        property.setFloor(model.getFeatures().getFloor());
+        property.setType(model.getPropertyType());
+
         property.setPrice(model.getPrice());
 
         final UserDTO user = UserDTOFactory.create(model.getOwner());
         property.setOwner(user);
+
+        final AddressDTO addressDTO = AddressDTOFactory.create(model.getAddress());
+
+        property.setAddress(addressDTO);
 
         return property;
     }

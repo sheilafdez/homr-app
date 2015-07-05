@@ -1,18 +1,26 @@
 package com.javaloping.homr.dto.property;
 
+import com.javaloping.homr.type.PropertyType;
+
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+
 /**
  * @author victormiranda@gmail.com
  */
 public class BasicPropertyDTO {
-    private Integer id;
+    private Long id;
 
     private String name;
 
-    public Integer getId() {
+    @Enumerated(EnumType.STRING)
+    private PropertyType type;
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -22,5 +30,13 @@ public class BasicPropertyDTO {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public PropertyType getType() {
+        return type;
+    }
+
+    public void setType(PropertyType type) {
+        this.type = type;
     }
 }

@@ -7,7 +7,7 @@ import javax.persistence.*;
 import java.math.BigDecimal;
 
 /**
- * Created by victor on 04/07/15.
+ * @author victormiranda@gmail.com
  */
 @Entity
 @DiscriminatorValue("rent")
@@ -46,5 +46,13 @@ public class Rent extends Property {
 
     public void setDeposit(BigDecimal deposit) {
         this.deposit = deposit;
+    }
+
+    public RentFeatures getRentFeatures() {
+        return rentFeatures;
+    }
+
+    public void setRentFeatures(RentFeatures rentFeatures) {
+        this.rentFeatures = rentFeatures;
     }
 }

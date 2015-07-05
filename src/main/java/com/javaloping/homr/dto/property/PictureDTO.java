@@ -4,7 +4,7 @@ package com.javaloping.homr.dto.property;
  * @author victormiranda@gmail.com
  */
 public class PictureDTO {
-    private Integer id;
+    private Long id;
 
     private String url;
 
@@ -12,11 +12,11 @@ public class PictureDTO {
 
     private BasicPropertyDTO property;
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

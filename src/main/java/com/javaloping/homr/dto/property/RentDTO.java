@@ -13,6 +13,14 @@ public class RentDTO extends PropertyDTO {
 
     private RentPeriodType period;
 
+    private Boolean pets;
+
+    private Boolean furniture;
+
+    private Boolean dishwasher;
+
+    private Boolean centralHeating;
+
     public BigDecimal getDeposit() {
         return deposit;
     }
@@ -28,5 +36,38 @@ public class RentDTO extends PropertyDTO {
     public void setPeriod(RentPeriodType period) {
         this.period = period;
     }
+
+    public Boolean getPets() {
+        return pets;
+    }
+
+    public void setPets(Boolean pets) {
+        this.pets = pets;
+    }
+
+    public Boolean getFurniture() {
+        return furniture;
+    }
+
+    public void setFurniture(Boolean furniture) {
+        this.furniture = furniture;
+    }
+
+    public Boolean getDishwasher() {
+        return dishwasher;
+    }
+
+    public void setDishwasher(Boolean dishwasher) {
+        this.dishwasher = dishwasher;
+    }
+
+    public Boolean getCentralHeating() {
+        return centralHeating;
+    }
+
+    public void setCentralHeating(Boolean centralHeating) {
+        this.centralHeating = centralHeating;
+    }
+
 
 }
