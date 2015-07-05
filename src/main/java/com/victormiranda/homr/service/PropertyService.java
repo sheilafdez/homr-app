@@ -1,6 +1,6 @@
 package com.victormiranda.homr.service;
 
-import com.victormiranda.homr.dto.RentDTO;
+import com.victormiranda.homr.dto.proper.RentDTO;
 
 /**
  * Created by victor on 04/07/15.

@@ -1,4 +1,4 @@
-package com.victormiranda.homr.dto;
+package com.victormiranda.homr.dto.proper;
 
 /**
  * Created by victor on 04/07/15.

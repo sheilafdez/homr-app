@@ -7,20 +7,21 @@ import java.util.Date;
  * Created by victor on 04/07/15.
  */
 @Entity
-@Table(name = "pictures")
-public class Picture {
-
+@Table(name = "areas")
+public class Area {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @ManyToOne
-    @JoinColumn(name = "propertyId")
-    private Property property;
-
     private String name;
 
-    private int order;
+    @ManyToOne
+    @JoinColumn(name = "countryId")
+    private Country country;
+
+    @ManyToOne
+    @JoinColumn(name = "parentId")
+    private Area parent;
 
     @Temporal(TemporalType.DATE)
     private Date createDate;
@@ -36,14 +37,6 @@ public class Picture {
         this.id = id;
     }
 
-    public Property getProperty() {
-        return property;
-    }
-
-    public void setProperty(Property property) {
-        this.property = property;
-    }
-
     public String getName() {
         return name;
     }
@@ -52,12 +45,20 @@ public class Picture {
         this.name = name;
     }
 
-    public int getOrder() {
-        return order;
+    public Country getCountry() {
+        return country;
     }
 
-    public void setOrder(int order) {
-        this.order = order;
+    public void setCountry(Country country) {
+        this.country = country;
+    }
+
+    public Area getParent() {
+        return parent;
+    }
+
+    public void setParent(Area parent) {
+        this.parent = parent;
     }
 
     public Date getCreateDate() {

@@ -1,7 +1,7 @@
 package com.victormiranda.homr.service;
 
-import com.victormiranda.homr.dto.RentDTO;
-import com.victormiranda.homr.dto.SaleDTO;
+import com.victormiranda.homr.dto.proper.RentDTO;
+import com.victormiranda.homr.dto.proper.SaleDTO;
 import com.victormiranda.homr.model.Rent;
 import com.victormiranda.homr.model.Sale;
 import com.victormiranda.homr.repository.PropertyRepository;
