@@ -6,11 +6,11 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
 
-    <changeSet author="victor" id="1424082049849-1">
+    <changeSet author="victor" id="country-structure-1">
 
         <createTable tableName="countries">
 
-            <column autoIncrement="true" name="id" type="INT(10)">
+            <column autoIncrement="true" name="id" type="bigint">
                 <constraints primaryKey="true"/>
             </column>
 

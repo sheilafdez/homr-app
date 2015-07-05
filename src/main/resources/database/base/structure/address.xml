@@ -10,13 +10,13 @@
 
         <createTable tableName="addresses">
 
-            <column autoIncrement="true" name="id" type="INT(10)">
+            <column autoIncrement="true" name="id" type="bigint">
                 <constraints primaryKey="true"/>
             </column>
 
             <column name="street" type="varchar(255)"/>
             <column name="number" type="INT(5)"/>
-            <column name="areaId" type="INT(10)"/>
+            <column name="areaId" type="bigint"/>
             <column name="createDate" type="DATE"/>
             <column name="modifyDate" type="DATE"/>
 

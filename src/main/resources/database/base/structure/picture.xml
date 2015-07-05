@@ -10,14 +10,14 @@
 
         <createTable tableName="pictures">
 
-            <column autoIncrement="true" name="id" type="INT(10)">
+            <column autoIncrement="true" name="id" type="bigint">
                 <constraints primaryKey="true"/>
             </column>
 
 
-            <column name="name" type="Varchar(255))"/>
+            <column name="name" type="Varchar(255)"/>
 
-            <column name="propertyId" type="Integer(10))"/>
+            <column name="propertyId" type="bigint"/>
             <column name="order" type="Integer(3)"/>
             <column name="createDate" type="DATE"/>
             <column name="modifyDate" type="DATE"/>

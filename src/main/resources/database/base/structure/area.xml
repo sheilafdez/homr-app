@@ -10,13 +10,13 @@
 
         <createTable tableName="areas">
 
-            <column autoIncrement="true" name="id" type="INT(10)">
+            <column autoIncrement="true" name="id" type="bigint">
                 <constraints primaryKey="true"/>
             </column>
 
             <column name="name" type="varchar(75)"/>
-            <column name="parentId" type="INT(10)"/>
-            <column name="countryId" type="INT(10)"/>
+            <column name="parentId" type="bigint"/>
+            <column name="countryId" type="bigint"/>
             <column name="createDate" type="DATE"/>
             <column name="modifyDate" type="DATE"/>
 
