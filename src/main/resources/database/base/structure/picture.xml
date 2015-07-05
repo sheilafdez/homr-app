@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+     http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet author="victor" id="picture-structure-1">
+
+        <createTable tableName="pictures">
+
+            <column autoIncrement="true" name="id" type="INT(10)">
+                <constraints primaryKey="true"/>
+            </column>
+
+
+            <column name="name" type="Varchar(255))"/>
+
+            <column name="propertyId" type="Integer(10))"/>
+            <column name="order" type="Integer(3)"/>
+            <column name="createDate" type="DATE"/>
+            <column name="modifyDate" type="DATE"/>
+
+        </createTable>
+
+    </changeSet>
+
+</databaseChangeLog>

@@ -13,6 +13,7 @@ import java.math.BigDecimal;
 @DiscriminatorValue("rent")
 public class Rent extends Property {
 
+    @Enumerated(EnumType.STRING)
     private RentPeriodType rentPeriod;
 
     @Enumerated(EnumType.STRING)
