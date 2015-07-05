@@ -1,9 +1,11 @@
 package com.javaloping.homr.init;
 
+import liquibase.integration.spring.SpringLiquibase;
 import org.hibernate.ejb.HibernatePersistence;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.DependsOn;
 import org.springframework.core.env.Environment;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
@@ -45,6 +47,12 @@ public class DatabaseConfig {
     @Value("${db.hibernate.hbm2ddl}")
     private String hbm2ddl;
 
+    @Value("${db.liquibase.path}")
+    private String liquibasePath;
+
+    @Value("${db.liquibase.context}")
+    private String liquibaseContext;
+
     @Bean
     public DataSource dataSource() {
         final DriverManagerDataSource dataSource = new DriverManagerDataSource();
@@ -54,11 +62,22 @@ public class DatabaseConfig {
         dataSource.setUsername(user);
         dataSource.setPassword(password);
 
-
         return dataSource;
     }
 
+    @Bean(name = "liquibase")
+    public SpringLiquibase getLiquibase() {
+        SpringLiquibase liquibase = new SpringLiquibase();
+
+        liquibase.setChangeLog(liquibasePath);
+        liquibase.setDataSource(dataSource());
+        liquibase.setContexts(liquibaseContext);
+
+        return liquibase;
+    }
+
     @Bean
+    @DependsOn("liquibase")
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
         final LocalContainerEntityManagerFactoryBean entityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
         final Properties hibernateProperties = new Properties();
