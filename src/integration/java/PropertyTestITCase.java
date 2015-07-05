@@ -1,5 +1,5 @@
-import com.victormiranda.homr.service.PropertyService;
-import com.victormiranda.homr.test.init.TestApp;
+import com.javaloping.homr.service.PropertyService;
+import com.javaloping.homr.test.init.TestApp;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
