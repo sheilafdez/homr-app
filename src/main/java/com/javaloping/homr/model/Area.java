@@ -19,7 +19,7 @@ public class Area {
     @JoinColumn(name = "countryId")
     private Country country;
 
-    @ManyToOne
+    @ManyToOne()
     @JoinColumn(name = "parentId")
     private Area parent;
 

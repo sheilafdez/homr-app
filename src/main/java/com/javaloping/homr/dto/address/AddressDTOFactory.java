@@ -21,6 +21,18 @@ public class AddressDTOFactory {
         return address;
     }
 
+    public static Address create(final AddressDTO addressDTO) {
+        final Address address = new Address();
+
+        final Area area = new Area();
+        area.setId(addressDTO.getArea().getId());
+
+        address.setArea(area);
+        address.setStreet(addressDTO.getStreet());
+
+        return address;
+    }
+
     private static AreaDTO loadAreaFromAddress(Area model) {
         AreaDTO area = new AreaDTO();
         area.setId(model.getId());
