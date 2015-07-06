@@ -7,7 +7,7 @@ import com.javaloping.homr.model.Area;
  * @author victormiranda@gmail.com
  */
 public class AddressDTOFactory {
-    public static AddressDTO create(final Address model) {
+    public static AddressDTO dtoFromModel(final Address model) {
         final AddressDTO address = new AddressDTO();
 
         address.setId(model.getId());
@@ -21,14 +21,20 @@ public class AddressDTOFactory {
         return address;
     }
 
-    public static Address create(final AddressDTO addressDTO) {
+    public static Address modelFromDTO(final AddressDTO addressDTO) {
         final Address address = new Address();
 
-        final Area area = new Area();
-        area.setId(addressDTO.getArea().getId());
+        address.setId(addressDTO.getId());
 
-        address.setArea(area);
+        if (addressDTO.getArea() != null) {
+            final Area area = new Area();
+            area.setId(addressDTO.getArea().getId());
+            area.setName(addressDTO.getArea().getName());
+
+            address.setArea(area);
+        }
         address.setStreet(addressDTO.getStreet());
+        address.setNumber(addressDTO.getNumber());
 
         return address;
     }

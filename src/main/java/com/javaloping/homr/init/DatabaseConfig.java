@@ -1,7 +1,7 @@
 package com.javaloping.homr.init;
 
 import liquibase.integration.spring.SpringLiquibase;
-import org.hibernate.ejb.HibernatePersistence;
+import org.hibernate.jpa.HibernatePersistenceProvider;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -17,8 +17,9 @@ import javax.sql.DataSource;
 import java.util.Properties;
 
 /**
- * Created by victor on 04/07/15.
+ * @author victormiranda@gmail.com
  */
+
 @Configuration
 @EnableJpaRepositories("com.javaloping.homr.repository")
 public class DatabaseConfig {
@@ -83,7 +84,7 @@ public class DatabaseConfig {
         final Properties hibernateProperties = new Properties();
 
         entityManagerFactoryBean.setDataSource(dataSource());
-        entityManagerFactoryBean.setPersistenceProviderClass(HibernatePersistence.class);
+        entityManagerFactoryBean.setPersistenceProviderClass(HibernatePersistenceProvider.class);
         entityManagerFactoryBean.setPackagesToScan(modelPackage);
 
         hibernateProperties.setProperty("hibernate.dialect", dialect);

@@ -5,7 +5,7 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 /**
- * Created by sheila on 05/07/15.
+ * @author sheilafdez@gmail.com
  */
 @Repository
 public interface UserRepository extends CrudRepository<User, Long> {

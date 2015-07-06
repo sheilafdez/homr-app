@@ -19,9 +19,14 @@ public abstract class PropertyDTO extends BasicPropertyDTO {
     private UserDTO owner;
 
     private Float sqMeters;
+
     private int bedrooms;
+
     private int bathrooms;
+
     private Integer floor;
+
+    private Boolean lift;
 
     public String getDescription() {
         return description;
@@ -85,5 +90,13 @@ public abstract class PropertyDTO extends BasicPropertyDTO {
 
     public Integer getFloor() {
         return floor;
+    }
+
+    public Boolean isLift() {
+        return lift;
+    }
+
+    public void setLift(Boolean lift) {
+        this.lift = lift;
     }
 }

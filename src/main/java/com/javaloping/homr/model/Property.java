@@ -9,7 +9,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * Created by victor on 04/07/15.
+ * @author victormiranda@gmail.com
  */
 @Entity
 @Table(name="properties")

@@ -1,13 +1,16 @@
 package com.javaloping.homr.dto.property;
 
 import com.javaloping.homr.type.RentPeriodType;
+import com.javaloping.homr.type.RentPriceType;
 
 import java.math.BigDecimal;
 
 /**
- * Created by victor on 04/07/15.
+ * @author victormiranda@gmail.com
  */
 public class RentDTO extends PropertyDTO {
+
+    private RentPriceType priceType;
 
     private BigDecimal deposit;
 
@@ -20,6 +23,14 @@ public class RentDTO extends PropertyDTO {
     private Boolean dishwasher;
 
     private Boolean centralHeating;
+
+    public RentPriceType getPriceType() {
+        return priceType;
+    }
+
+    public void setPriceType(RentPriceType priceType) {
+        this.priceType = priceType;
+    }
 
     public BigDecimal getDeposit() {
         return deposit;

@@ -1,7 +1,7 @@
 package com.javaloping.homr.dto.property;
 
 /**
- * Created by victor on 04/07/15.
+ * @author victormiranda@gmail.com
  */
 public class SaleDTO extends  PropertyDTO {
 }

@@ -1,7 +1,7 @@
 package com.javaloping.homr.dto.user;
 
 /**
- * Created by sheila on 05/07/15.
+ * @author sheilafdez@gmail.com
  */
 public class UserDTO {
 

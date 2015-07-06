@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.Date;
 
 /**
- * Created by victor on 04/07/15.
+ * @author victormiranda@gmail.com
  */
 @Entity
 @Table(name = "countries")

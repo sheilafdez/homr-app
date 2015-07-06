@@ -8,19 +8,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * Created by victor on 04/07/15.
+ * @author victormiranda@gmail.com
  */
+
 @RestController
 @RequestMapping("/user-profile")
 public class UserProfileController {
 
     @Autowired
     private UserService userService;
-
-    @RequestMapping(value = "/", method = RequestMethod.GET)
-    public Object hello() {
-        return "hello world";
-    }
 
     @RequestMapping(value = "/add-user", method = RequestMethod.POST)
     public void addUser(UserDTO user){

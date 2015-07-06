@@ -2,9 +2,7 @@ package com.javaloping.homr.service;
 
 import com.javaloping.homr.dto.property.RentDTO;
 import com.javaloping.homr.dto.property.RentDTOFactory;
-import com.javaloping.homr.dto.property.SaleDTO;
 import com.javaloping.homr.model.Rent;
-import com.javaloping.homr.model.Sale;
 import com.javaloping.homr.repository.PropertyRepository;
 import com.javaloping.homr.repository.UserRepository;
 import org.springframework.stereotype.Service;
@@ -26,8 +24,8 @@ public class PropertyServiceImpl implements PropertyService {
     @Resource
     private UserRepository userRepository;
 
-    public RentDTO addRent(RentDTO rentDTO) {
-        final Rent rent = RentDTOFactory.create(rentDTO);
+    public RentDTO addRent(final RentDTO rentDTO) {
+        final Rent rent = RentDTOFactory.modelFromDTO(rentDTO);
 
         final Date now = new Date();
 
@@ -39,14 +37,8 @@ public class PropertyServiceImpl implements PropertyService {
 
         propertyRepository.save(rent);
 
-        Rent rentSavedPopulated = (Rent)propertyRepository.findOne(rent.getId());
+        Rent rentSavedPopulated = (Rent) propertyRepository.findOne(rent.getId());
 
-        return RentDTOFactory.create(rentSavedPopulated);
-    }
-
-    public void addSale(SaleDTO saleDTO) {
-        Sale sale = new Sale();
-
-        propertyRepository.save(sale);
+        return RentDTOFactory.dtoFromModel(rentSavedPopulated);
     }
 }
