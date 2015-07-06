@@ -1,4 +1,3 @@
-import com.javaloping.homr.controller.RentController;
 import com.javaloping.homr.test.init.TestApp;
 import org.junit.Before;
 import org.junit.Test;
@@ -13,6 +12,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 /**
@@ -28,46 +28,18 @@ public class PropertyTestITCase {
     protected MockMvc mock;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         mock = MockMvcBuilders.webAppContextSetup(wac).build();
     }
 
-    @Autowired
-    private RentController rentController;
-
     @Test
     public void testAddRent() throws Exception {
-        String json = "\n" +
-                "{\n" +
-                "  \"name\" : \"My home\",\n" +
-                "    \"description\" : \"My home\",\n" +
-                "  \"price\": 1100,\n" +
-                "  \"deposit\": 1650,\n" +
-                "  \"period\" : \"YEAR\",\n" +
-                "  \"sqMeters\": 55,\n" +
-                "  \"lift\": false,\n" +
-                "  \"floor\": 2,\n" +
-                "  \"type\": \"FLAT\",\n" +
-                "  \"owner\": {\n" +
-                "    \"id\" : 1\n" +
-                "  },\n" +
-                "  \"furniture\" : true,\n" +
-                "  \"pets\" : true,\n" +
-                "  \"dishwasher\" : true,\n" +
-                "  \"address\" : {\n" +
-                "    \"street\" : \"Dundrum wood\",\n" +
-                "    \"number\": 17,\n" +
-                "    \"area\" : {\n" +
-                "      \"id\" :  2,\n" +
-                "      \"name\": \"Dundrum\"\n" +
-                "    }\n" +
-                "  }\n" +
-                "}";
+        String json = " {   \"name\" : \"My home\",     \"description\" : \"My home\",   \"price\": 1100,   \"deposit\": 1650,   \"period\" : \"YEAR\",   \"sqMeters\": 55,   \"lift\": false,   \"floor\": 2,   \"type\": \"FLAT\",   \"owner\": {     \"id\" : 1   },   \"furniture\" : true,   \"pets\" : true,   \"dishwasher\" : true,   \"centralHeating\" : true,   \"address\" : {     \"street\" : \"Dundrum wood\",     \"number\": 17,     \"area\" : {       \"id\" :  2,       \"name\": \"Dundrum\"     }   } }";
         mock.perform(
                 post("/renting/")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(json)
                         .accept(MediaType.APPLICATION_JSON)
-        ).andExpect(status().isOk());
+        ).andDo(print()).andExpect(status().isOk());
     }
 }
