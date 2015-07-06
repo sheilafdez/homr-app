@@ -1,6 +1,6 @@
 package com.javaloping.homr.service;
 
-import com.javaloping.homr.dto.UserDTO;
+import com.javaloping.homr.dto.user.UserDTO;
 import com.javaloping.homr.model.User;
 import com.javaloping.homr.repository.UserRepository;
 import org.springframework.stereotype.Service;
@@ -9,7 +9,7 @@ import javax.annotation.Resource;
 import javax.transaction.Transactional;
 
 /**
- * Created by sheila on 05/07/15.
+ * @author sheilafdez@gmail.com
  */
 @Service
 @Transactional

@@ -10,7 +10,7 @@
 
         <createTable tableName="properties">
 
-            <column autoIncrement="true" name="id" type="INT(10)">
+            <column autoIncrement="true" name="id" type="bigint">
                 <constraints primaryKey="true"/>
             </column>
 
@@ -18,24 +18,26 @@
             <column name="mode" type="Varchar(10)"/>
 
             <column name="name" type="Varchar(75)"/>
+            <column name="published" type="bit"/>
 
             <column name="description" type="Varchar(255)"/>
 
-            <column name="ownerId" type="Integer(10)"/>
-            <column name="addressId" type="Integer(10)"/>
+            <column name="ownerId" type="bigint"/>
+            <column name="addressId" type="bigint"/>
             <column name="views" type="Integer(10)"/>
             <column name="price" type="Decimal(10,2)"/>
 
             <!-- Rent columns -->
             <column name="deposit" type="Decimal(10,2)"/>
             <column name="pets" type="bit"/>
+            <column name="centralHeating" type="bit"/>
             <column name="furnished" type="bit"/>
             <column name="dishwasher" type="bit"/>
             <column name="priceType" type="Varchar(20)"/>
             <column name="rentPeriod" type="Varchar(20)"/>
 
-
             <column name="bedrooms" type="Integer(1)"/>
+            <column name="bathrooms" type="Integer(1)"/>
             <column name="lift" type="bit"/>
             <column name="floor" type="Integer(1)"/>
             <column name="sqMeters" type="Float(4)"/>

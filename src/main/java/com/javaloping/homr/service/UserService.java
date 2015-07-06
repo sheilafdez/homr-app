@@ -1,15 +1,11 @@
 package com.javaloping.homr.service;
 
-import com.javaloping.homr.dto.UserDTO;
+import com.javaloping.homr.dto.user.UserDTO;
 
 /**
- * Created by sheila on 05/07/15.
+ * @author sheilafdez@gmail.com
  */
 public interface UserService {
 
-    /**
-     * Create new user
-     * @param userDTO
-     */
     void createUser(final UserDTO userDTO);
 }

@@ -9,7 +9,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * Created by victor on 04/07/15.
+ * @author victormiranda@gmail.com
  */
 @Entity
 @Table(name="properties")
@@ -18,7 +18,7 @@ import java.util.List;
 public abstract class Property {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @Enumerated(EnumType.STRING)
     private PropertyType propertyType;
@@ -35,16 +35,12 @@ public abstract class Property {
 
     private int views;
 
-    private Float sqMeters;
+    private boolean published;
 
-    private int bedrooms;
-
-    private Integer floor;
+    private Features features;
 
     @Column( precision = 10, scale = 2, columnDefinition="DECIMAL(10,2)")
     private BigDecimal price;
-
-    private Boolean lift;
 
     @Enumerated(EnumType.STRING)
     private ElderyType eldery;
@@ -53,7 +49,7 @@ public abstract class Property {
     @JoinColumn(name = "ownerId")
     private User owner;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "addressId")
     private Address address;
 
@@ -63,11 +59,11 @@ public abstract class Property {
     @OneToMany(mappedBy = "property")
     private List<PropertyHistory> propertyHistories;
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -119,28 +115,20 @@ public abstract class Property {
         this.views = views;
     }
 
-    public Float getSqMeters() {
-        return sqMeters;
+    public boolean isPublished() {
+        return published;
     }
 
-    public void setSqMeters(Float sqMeters) {
-        this.sqMeters = sqMeters;
+    public void setPublished(boolean published) {
+        this.published = published;
     }
 
-    public int getBedrooms() {
-        return bedrooms;
+    public Features getFeatures() {
+        return features;
     }
 
-    public void setBedrooms(int bedrooms) {
-        this.bedrooms = bedrooms;
-    }
-
-    public Integer getFloor() {
-        return floor;
-    }
-
-    public void setFloor(Integer floor) {
-        this.floor = floor;
+    public void setFeatures(Features features) {
+        this.features = features;
     }
 
     public BigDecimal getPrice() {
@@ -149,14 +137,6 @@ public abstract class Property {
 
     public void setPrice(BigDecimal price) {
         this.price = price;
-    }
-
-    public Boolean isLift() {
-        return lift;
-    }
-
-    public void setLift(Boolean lift) {
-        this.lift = lift;
     }
 
     public ElderyType getEldery() {

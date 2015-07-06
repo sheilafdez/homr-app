@@ -1,8 +1,8 @@
 package com.javaloping.homr.type;
 
 /**
- * Created by victor on 04/07/15.
+ * @author victormiranda@gmail.com
  */
 public enum ElderyType {
-    NEW, LESS5,LESS15,LESS30,LESS50,LESS100,MORE_EQ_100;
+    NEW, LESS5,LESS15,LESS30,LESS50,LESS100,MORE_EQ_100
 }

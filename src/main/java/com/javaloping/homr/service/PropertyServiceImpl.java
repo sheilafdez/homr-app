@@ -1,17 +1,18 @@
 package com.javaloping.homr.service;
 
-import com.javaloping.homr.dto.proper.RentDTO;
-import com.javaloping.homr.dto.proper.SaleDTO;
+import com.javaloping.homr.dto.property.RentDTO;
+import com.javaloping.homr.dto.property.RentDTOFactory;
 import com.javaloping.homr.model.Rent;
-import com.javaloping.homr.model.Sale;
 import com.javaloping.homr.repository.PropertyRepository;
+import com.javaloping.homr.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import javax.transaction.Transactional;
+import java.util.Date;
 
 /**
- * Created by victor on 04/07/15.
+ * @author victormiranda@gmail.com
  */
 @Service
 @Transactional
@@ -20,15 +21,24 @@ public class PropertyServiceImpl implements PropertyService {
     @Resource
     private PropertyRepository propertyRepository;
 
-    public void addRent(RentDTO rentDTO) {
-        Rent rent = new Rent();
+    @Resource
+    private UserRepository userRepository;
+
+    public RentDTO addRent(final RentDTO rentDTO) {
+        final Rent rent = RentDTOFactory.modelFromDTO(rentDTO);
+
+        final Date now = new Date();
+
+        rent.setCreateDate(now);
+        rent.setModifyDate(now);
+
+        rent.getAddress().setCreateDate(now);
+        rent.getAddress().setModifyDate(now);
 
         propertyRepository.save(rent);
-    }
 
-    public void addSale(SaleDTO saleDTO) {
-        Sale sale = new Sale();
+        Rent rentSavedPopulated = (Rent) propertyRepository.findOne(rent.getId());
 
-        propertyRepository.save(sale);
+        return RentDTOFactory.dtoFromModel(rentSavedPopulated);
     }
 }

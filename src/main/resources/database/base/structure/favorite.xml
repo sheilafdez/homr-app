@@ -10,12 +10,12 @@
 
         <createTable tableName="favorites">
 
-            <column autoIncrement="true" name="id" type="INT(10)">
+            <column autoIncrement="true" name="id" type="bigint">
                 <constraints primaryKey="true"/>
             </column>
 
-            <column name="userId" type="Integer(10))"/>
-            <column name="propertyId" type="Integer(10))"/>
+            <column name="userId" type="bigint"/>
+            <column name="propertyId" type="bigint"/>
             <column name="createDate" type="DATE"/>
             <column name="modifyDate" type="DATE"/>
 

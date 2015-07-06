@@ -10,11 +10,11 @@
 
         <createTable tableName="property_histories">
 
-            <column autoIncrement="true" name="id" type="INT(10)">
+            <column autoIncrement="true" name="id" type="bigint">
                 <constraints primaryKey="true"/>
             </column>
 
-            <column name="propertyId" type="INT(10)"/>
+            <column name="propertyId" type="bigint"/>
             <column name="description" type="Varchar(255)"/>
 
             <column name="createDate" type="DATE"/>

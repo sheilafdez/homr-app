@@ -1,8 +1,8 @@
 package com.javaloping.homr.type;
 
 /**
- * Created by victor on 04/07/15.
+ * @author victormiranda@gmail.com
  */
 public enum RentPeriodType {
-    WEEKS,MONTHS, YEAR;
+    WEEKS,MONTHS, YEAR
 }
